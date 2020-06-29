@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jT7wQdx+o2NjVxeilDKXXQE3jxMtzDnwa1UOTPZ5TBV7VXUzG2ujxd7hHnx6Rfq0IgT4EVUb6ypUOAReSzUQEg==",
+  "success": true,
+  "projectFilePath": "I:\\VisualStudio2019\\AbcoderSolution\\Abcoder.Tools\\Abcoder.Tools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Abcoder\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Abcoder\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
