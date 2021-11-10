@@ -66,7 +66,7 @@ namespace Abcoder.Tools.ABLoger
 
         private static readonly object lockObj2 = new object();
         static void RecordLog(ABLogBean logBean)
-        {            
+        {
             //日志文件名称
             var fileName = logBean.Dt.ToString("MM-dd-HH");
             var dirName = AppBasePath + logPath;
