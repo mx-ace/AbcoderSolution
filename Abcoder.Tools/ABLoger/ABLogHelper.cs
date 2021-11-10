@@ -26,7 +26,7 @@ namespace Abcoder.Tools.ABLoger
         /// <summary>
         /// 日志记录文件名
         /// </summary>
-        private static string logPath = "RunLog";
+        private static string logPath = "/RunLog";
 
         /// <summary>
         /// 日志记录线程
@@ -72,11 +72,10 @@ namespace Abcoder.Tools.ABLoger
             var dirName = AppBasePath + logPath;
             lock (lockObj2)
             {
-                if (!Directory.Exists(dirName + fileName))
-                    Directory.CreateDirectory(dirName + fileName);
+                if (!Directory.Exists(dirName +"/"+ fileName))
+                    Directory.CreateDirectory(dirName + "/" + fileName);
             }
-            
-            var file = string.Format("{0}{1}/{2}.htm", dirName, fileName, logBean.Type);
+            var file = $"{dirName}/{fileName}/{logBean.Type}.html";
             lock (lockObj2)
             {
                 try
@@ -143,6 +142,15 @@ namespace Abcoder.Tools.ABLoger
             WriteLog(msg, ABLogTypeEnum.Normal);
         }
 
+        /// <summary>
+        /// 记录异常日志
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <param name="type"></param>
+        public static void WriteLog(Exception ex, Enum type = null)
+        {
+            WriteLog(ex.Message, type ?? ABLogTypeEnum.Exception);
+        }
 
     }
 }
