@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;netcoreapp3.1</TargetFrameworks>
-    <Version>2.1.2</Version>
+    <Version>2.1.4</Version>
     <Authors>mx-ace</Authors>
     <Company>Abcoder</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
