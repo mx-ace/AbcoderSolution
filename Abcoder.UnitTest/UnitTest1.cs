@@ -16,7 +16,7 @@ namespace Abcoder.UnitTest
             {
                 MessageType = NPMessageTypeEnum.Json
             };
-            var result = NamedPipeClient.SendMessage(applyBean);
+            var result = NamedPipeClient.SendMessage(applyBean, "");
             Console.WriteLine("");
         }
     }

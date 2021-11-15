@@ -58,18 +58,16 @@ namespace Abcoder.Tools.NamedPipe
         /// 开始管道处理线程
         /// </summary>
         /// <param name="action">管道消息处理函数</param>
-        /// <param name="name">命名管道名称,缺省值为appSettings的“PipeName”</param>
+        /// <param name="name">命名管道名称</param>
         /// <param name="count">设置管道数量</param>
-        public static void StartService( Func<NPBaseApplyBean, NPBaseReplyBean> action, string name="", int count = 5)
+        public static void StartService(Func<NPBaseApplyBean, NPBaseReplyBean> action, string name, int count = 5)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new Exception("命名管道名称不能为空");
             pipeCount = count;
             ABLogHelper.WriteLog("开启命名管道服务", ABLogTypeEnum.NamedPipe);
             //业务处理逻辑对象
             Instance.messageHandler = action;
-
-            if (string.IsNullOrWhiteSpace(name))
-                name = ABConfigUtility.AppSettingsGetString("PipeName", "Default_Name");
-
             for (var i = 0; i < count; i++)
             {
                 Instance.NamedPipeWorkTasks.Add(Task.Factory.StartNew(BusinessHandler, name));

@@ -25,11 +25,13 @@ namespace Abcoder.Tools.NamedPipe
         /// 消息发送（管道）
         /// </summary>
         /// <param name="applyBean">消息内容对象</param>
-        /// <param name="name">命名管道名称,缺省值为appSettings的“PipeName”</param>
+        /// <param name="name">命名管道名称</param>
         /// <param name="timeout">结果等待超时时间</param>
         /// <returns>响应结果</returns>
-        public static NPBaseReplyBean SendMessage(NPBaseApplyBean applyBean, string name = "", int timeout = 5000)
+        public static NPBaseReplyBean SendMessage(NPBaseApplyBean applyBean, string name, int timeout = 5000)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new Exception("命名管道名称不能为空");
             try
             {
                 var pipeMessage = JsonConvert.SerializeObject(applyBean);
@@ -37,8 +39,7 @@ namespace Abcoder.Tools.NamedPipe
                 lock (lockObj)
                 {
                     var result = "";
-                    if (string.IsNullOrWhiteSpace(name))
-                        name = ABConfigUtility.AppSettingsGetString("PipeName", "Default_Name");
+
                     using (var pipeClient = new NamedPipeClientStream("localhost", name, PipeDirection.InOut, PipeOptions.None, TokenImpersonationLevel.None))
                     {
                         pipeClient.Connect(timeout);
