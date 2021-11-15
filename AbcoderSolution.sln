@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abcoder.ConsoleApp", "Abcoder.ConsoleApp\Abcoder.ConsoleApp.csproj", "{C724186B-582F-45C1-80A8-18E40D56BA43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abcoder.ConsoleApp", "Abcoder.ConsoleApp\Abcoder.ConsoleApp.csproj", "{C724186B-582F-45C1-80A8-18E40D56BA43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abcoder.UnitTest", "Abcoder.UnitTest\Abcoder.UnitTest.csproj", "{20845852-F379-4BAA-A209-C57A5C7BE9B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abcoder.Tools", "Abcoder.Tools\Abcoder.Tools.csproj", "{6B18E701-FFDD-4599-8047-3ED5E2B64172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abcoder.Tools", "Abcoder.Tools\Abcoder.Tools.csproj", "{6B18E701-FFDD-4599-8047-3ED5E2B64172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

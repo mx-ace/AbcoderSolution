@@ -15,7 +15,8 @@ namespace Abcoder.ConsoleApp
             try
             {
                 //NamedPipeServer.StartService(PipePassBeanHandler);
-                while (true) {
+                while (true)
+                {
                     Console.Write("Key:");
                     var key = Console.ReadKey();
                     var applyBean = new NPBaseApplyBean()
